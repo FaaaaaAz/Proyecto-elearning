@@ -1,8 +1,7 @@
-// ============ ESTADO GLOBAL ============
+
 let currentUser = null;
 let allCourses = [];
 
-// ============ ELEMENTOS DOM ============
 const loginScreen = document.getElementById('loginScreen');
 const mainScreen = document.getElementById('mainScreen');
 const loginBtn = document.getElementById('loginBtn');
@@ -66,27 +65,21 @@ function showError(message) {
     }, 3000);
 }
 
-// ============ PANTALLA PRINCIPAL ============
 async function showMainScreen() {
-    // Ocultar login y mostrar pantalla principal
     loginScreen.classList.remove('active');
     mainScreen.classList.add('active');
     
-    // Mostrar info de usuario
     userWelcome.textContent = `Bienvenido, ${currentUser.name}`;
     userRole.textContent = currentUser.role.toUpperCase();
     userRole.className = `badge badge-${currentUser.role}`;
     
-    // Si es admin, mostrar panel de administración
     if (currentUser.role === 'admin') {
         await loadAdminPanel();
     }
     
-    // Cargar cursos
     await loadCourses();
 }
 
-// ============ PANEL DE ADMINISTRACIÓN ============
 async function loadAdminPanel() {
     try {
         const response = await fetch('/api/admin/students');
@@ -118,7 +111,6 @@ async function loadAdminPanel() {
     }
 }
 
-// ============ CARGA DE CURSOS ============
 async function loadCourses() {
     try {
         const response = await fetch('/api/courses');
@@ -147,7 +139,6 @@ function renderCourses() {
             course.teacher === currentUser.username
         );
     }
-    // Admin ve todos los cursos
     
     if (coursesToShow.length === 0) {
         coursesList.innerHTML = '<p>No tienes cursos asignados.</p>';
@@ -177,35 +168,29 @@ function renderCourses() {
     coursesList.innerHTML = html;
 }
 
-// ============ REPRODUCTOR DE VIDEO ============
 function playVideo(courseTitle, moduleTitle, videoFile) {
     videoSection.style.display = 'block';
     videoTitle.textContent = `${courseTitle} - ${moduleTitle}`;
     congratsSection.style.display = 'none';
     
-    // ✅ NUEVO: Videos servidos directamente desde EC2
     videoPlayer.src = `/videos/${videoFile}`;
     videoPlayer.load();
     videoPlayer.play();
     
-    // Scroll al reproductor
     videoSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Detectar cuando termina el video
 videoPlayer.addEventListener('ended', () => {
     console.log('Video terminado');
     congratsSection.style.display = 'block';
 });
 
-// Cerrar video
 closeVideoBtn.addEventListener('click', () => {
     videoSection.style.display = 'none';
     videoPlayer.pause();
     videoPlayer.src = '';
 });
 
-// Continuar después de felicitaciones
 nextModuleBtn.addEventListener('click', () => {
     congratsSection.style.display = 'none';
     videoSection.style.display = 'none';
@@ -214,7 +199,6 @@ nextModuleBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ============ LOGOUT ============
 logoutBtn.addEventListener('click', () => {
     currentUser = null;
     allCourses = [];
