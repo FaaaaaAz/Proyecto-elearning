@@ -134,9 +134,9 @@ app.put('/api/courses/:id', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+app.listen(3000, '0.0.0.0', () => {
   console.log(`========================================`);
-  console.log(`🚀 Servidor eLearning iniciado`);
+  console.log(`🚀 Servidor eLearning iniciado`);s
   console.log(`📍 Puerto: ${PORT}`);
   console.log(`🎥 Video base: ${VIDEO_BASE}`);
   console.log(`========================================`);
