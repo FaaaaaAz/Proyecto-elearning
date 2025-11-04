@@ -1,0 +1,369 @@
+/* ============ RESET Y FUENTES ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-box {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 450px;
+    margin: 100px auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.error-message {
+    background: #ff4444;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: none;
+    text-align: center;
+}
+
+.help-text {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #666;
+}
+
+.help-text p {
+    margin: 5px 0;
+}
+
+/* ============ BOTONES ============ */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-play {
+    background: #667eea;
+    color: white;
+}
+
+.btn-play:hover {
+    background: #5568d3;
+}
+
+/* ============ HEADER ============ */
+.header {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-admin {
+    background: #ff6b6b;
+    color: white;
+}
+
+.badge-student {
+    background: #4ecdc4;
+    color: white;
+}
+
+.badge-teacher {
+    background: #ffd93d;
+    color: #333;
+}
+
+/* ============ PANEL ADMIN ============ */
+.admin-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.admin-panel h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* ============ CURSOS ============ */
+.courses-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.courses-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-color: #667eea;
+}
+
+.course-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.course-info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.modules-list {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+}
+
+.module-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.module-item:last-child {
+    border-bottom: none;
+}
+
+.module-title {
+    color: #333;
+    font-weight: 500;
+}
+
+/* ============ VIDEO ============ */
+.video-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.video-header h3 {
+    color: #333;
+}
+
+.video-container {
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#videoPlayer {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    display: block;
+}
+
+.congrats-section {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    color: white;
+}
+
+.congrats-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.congrats-section p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .login-box {
+        margin: 20px auto;
+        padding: 30px 20px;
+    }
+}

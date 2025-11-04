@@ -1,0 +1,28 @@
+# No subir videos pesados al repositorio
+videos_local/
+*.mp4
+*.avi
+*.mov
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Keypairs de AWS
+*.pem
+*.ppk
+
+# VS Code
+.vscode/

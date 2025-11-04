@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Administrador"
+    },
+    {
+      "username": "alumno",
+      "password": "alumno123",
+      "role": "student",
+      "name": "Juan Pérez"
+    },
+    {
+      "username": "alumno2",
+      "password": "alumno123",
+      "role": "student",
+      "name": "María García"
+    },
+    {
+      "username": "profe",
+      "password": "profe123",
+      "role": "teacher",
+      "name": "Prof. Roberto Martínez"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "title": "Introducción a JavaScript",
+      "teacher": "profe",
+      "students": ["alumno", "alumno2"],
+      "modules": [
+        {
+          "id": "1",
+          "title": "Variables y tipos de datos",
+          "video": "video1.mp4"
+        },
+        {
+          "id": "2",
+          "title": "Funciones y scope",
+          "video": "video2.mp4"
+        },
+        {
+          "id": "3",
+          "title": "Arrays y objetos",
+          "video": "video3.mp4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Desarrollo Web con HTML/CSS",
+      "teacher": "profe",
+      "students": ["alumno"],
+      "modules": [
+        {
+          "id": "1",
+          "title": "Estructura HTML",
+          "video": "video1.mp4"
+        },
+        {
+          "id": "2",
+          "title": "Estilos con CSS",
+          "video": "video2.mp4"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Bases de Datos SQL",
+      "teacher": "profe",
+      "students": ["alumno2"],
+      "modules": [
+        {
+          "id": "1",
+          "title": "Introducción a SQL",
+          "video": "video1.mp4"
+        }
+      ]
+    }
+  ]
+}
