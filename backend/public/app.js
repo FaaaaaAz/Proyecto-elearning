@@ -183,8 +183,8 @@ function playVideo(courseTitle, moduleTitle, videoFile) {
     videoTitle.textContent = `${courseTitle} - ${moduleTitle}`;
     congratsSection.style.display = 'none';
     
-    // Asignar URL del video (proxy desde servidor)
-    videoPlayer.src = `/video/${videoFile}`;
+    // ✅ NUEVO: Videos servidos directamente desde EC2
+    videoPlayer.src = `/videos/${videoFile}`;
     videoPlayer.load();
     videoPlayer.play();
     

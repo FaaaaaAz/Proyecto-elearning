@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ✅ NUEVO: Servir videos desde la carpeta local 'videos'
+app.use('/videos', express.static(path.join(__dirname, 'videos')));
+
 const dataPath = path.join(__dirname, 'data.json');
 let data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
